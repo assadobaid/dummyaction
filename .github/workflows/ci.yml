@@ -62,5 +62,5 @@ jobs:
       
       # step 4: run demo
       - name: go run
-        run: go run ./demo/calculator-demo.go
+        run: go run ./demo/dummy.go
 
