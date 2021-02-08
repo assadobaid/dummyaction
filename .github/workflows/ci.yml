@@ -38,7 +38,6 @@ jobs:
           go vet .
           golint .
 
-  # job 2: run demo
   run-demo:
     name: Run Demo Application
     needs: build
