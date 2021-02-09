@@ -10,25 +10,23 @@ on:
     branches:
       - main
 
-# jobs to run
-jobs:
 
-  # job 1: test go module
+jobs:
+  # Build and Lint
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-
       - name: Set up Go 1.15
         uses: actions/setup-go@v2
         with:
           go-version: 1.15
       
-      # step 2: checkout repository code
+      # Checkout repository code
       - name: Checkout code into workspace directory
         uses: actions/checkout@v2
 
-      # step 3: install dependencies
+      # Install dependencies
       - name: Install all Go dependencies
         run: |
           go version
@@ -40,19 +38,19 @@ jobs:
           go vet .
           golint .
 
-  run-demo:
-    name: Run Demo Application
+  run-application:
+    name: Run Application
     needs: build
     runs-on: ubuntu-latest
     steps:
       
-      # step 1: set up go
+      # set up go
       - name: Set up Go 1.15
         uses: actions/setup-go@v1
         with:
           go-version: 1.15
       
-      # step 2: checkout repository code
+      # checkout repository code
       - name: Checkout code into workspace directory
         uses: actions/checkout@v2
 
@@ -60,7 +58,7 @@ jobs:
       - name: Install all Go dependencies
         run: go get
       
-      # step 4: run demo
+      # run
       - name: go run
-        run: go run ./demo/dummy.go
+        run: go run ./program/main.go
 

@@ -1,4 +1,4 @@
-package calculator
+package calc
 
 import (
 	"testing"
@@ -13,7 +13,7 @@ func TestAdd(t *testing.T) {
 
 // Subtract returns the subtraction of two integers
 func TestSubtract(t *testing.T) {
-	if Subtract(6, 3) != 3 {
+	if Sub(6, 3) != 3 {
 		t.Fail()
 	}
 }
