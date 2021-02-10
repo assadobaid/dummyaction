@@ -8,6 +8,6 @@ func Add(a int, b int) int {
 }
 
 func Sub(a int, b int) int {
-	fmt.Printf("Sub is Called")
+	fmt.Printf("Sub is Called, Hej, och hejdå")
 	return a - b
 }
