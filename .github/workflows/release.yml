@@ -28,8 +28,9 @@ jobs:
       - name: upload to azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }} # 
-
+           credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        env: # Or as an environment variable
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Upload to blob storage
         uses: azure/CLI@v1
         with:
